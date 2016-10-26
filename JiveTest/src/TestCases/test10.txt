@@ -1,0 +1,42 @@
+int n, s, i, p;n = 61;for (s=1 ; s*s < n ;)      s = s + 1;i = 2;p = 1;for ( ; i < s+1 ; i = i+1 ) {      if (p == 1) 		if ( (n/i)*i == n)		   p = 0;}end
+0: bipush 61
+2: istore_1
+3: iconst_1
+4: istore_2
+5: iload_2
+6: iload_2
+7: imul
+8: iload_1
+9: if_icmpge 19
+12: iload_2
+13: iconst_1
+14: iadd
+15: istore_2
+16: goto 5
+19: iconst_2
+20: istore_3
+21: iconst_1
+22: istore 4
+24: iload_3
+25: iload_2
+26: iconst_1
+27: iadd
+28: if_icmpge 56
+31: iload 4
+33: iconst_1
+34: if_icmpne 49
+37: iload_1
+38: iload_3
+39: idiv
+40: iload_3
+41: imul
+42: iload_1
+43: if_icmpne 49
+46: iconst_0
+47: istore 4
+49: iload_3
+50: iconst_1
+51: iadd
+52: istore_3
+53: goto 24
+56: return
